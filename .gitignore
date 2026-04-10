@@ -1,0 +1,20 @@
+# Ignore all node_modules recursively
+**/node_modules/
+
+**/.agent/
+
+
+# Ignore all .env files recursively
+**/.env
+**/.env.*
+
+# Ignore all Vercel configs recursively
+**/.vercel/
+
+# Logs
+**/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+.vercel
