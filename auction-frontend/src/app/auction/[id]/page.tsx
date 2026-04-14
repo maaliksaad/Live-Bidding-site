@@ -28,7 +28,7 @@ export default function AuctionDetailPage() {
   const { data: bids, isLoading: bidsLoading, refetch: refetchBids } = useBids()
 
   // Real-time state for bid updates
-  const timer = useCountdownTimer(car?.endTime || new Date());
+  const timer = useCountdownTimer(car?.endTime);
 
   const { joinAuction: socketJoinAuction, currentBids, isConnected, initializeBidData } = useSocketContext();
 
