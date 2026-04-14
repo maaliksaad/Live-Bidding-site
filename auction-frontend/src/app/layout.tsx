@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/header";
 import { Navigation } from "@/components/layout/navigation";
 import { QueryProvider } from "@/providers/QueryProvider";
 import { SocketProvider } from "@/providers/SocketProvider";
+import { ServerAwarenessModal } from "@/components/modals/ServerAwarenessModal";
 
 export const metadata: Metadata = {
   title: "Auction App",
@@ -27,6 +28,7 @@ export default function RootLayout({
               <main className="flex-1">{children}</main>
               <Footer />
             </div>
+            <ServerAwarenessModal />
           </SocketProvider>
         </QueryProvider>
       </body>
