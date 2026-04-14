@@ -157,6 +157,46 @@ export function LoginForm() {
           </span>
         ) : "Log In"}
       </Button>
+
+      {/* Demo Credentials Section */}
+      <div className="mt-8 pt-6 border-t border-gray-100">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="p-1.5 bg-indigo-50 rounded-lg">
+            <Eye className="w-4 h-4 text-indigo-500" />
+          </div>
+          <p className="text-sm font-semibold text-gray-800">Demo Seller Accounts</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+          {[
+            { id: 1, email: 'seller1@example.com', label: 'John Seller' },
+            { id: 2, email: 'seller2@example.com', label: 'Jane Dealer' },
+            { id: 3, email: 'seller3@example.com', label: 'Alice Trader' }
+          ].map((seller) => (
+            <button
+              key={seller.id}
+              type="button"
+              onClick={() => {
+                setValue('identifier', seller.email, { shouldValidate: true });
+                setValue('password', 'password123', { shouldValidate: true });
+              }}
+              className="flex items-center justify-between p-3.5 bg-gray-50/50 hover:bg-indigo-50 border border-gray-100 hover:border-indigo-200 rounded-xl transition-all group"
+            >
+              <div className="flex flex-col items-start gap-0.5">
+                <span className="text-sm font-medium text-gray-700 group-hover:text-indigo-700 transition-colors">
+                  {seller.label}
+                </span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-4 p-3 bg-blue-50/50 rounded-lg border border-blue-100/50">
+          <p className="text-[11px] text-blue-600/80 leading-relaxed italic">
+            * Password for all demo accounts is <span className="font-bold underline">password123</span>. These are pre-seeded accounts for testing purposes.
+          </p>
+        </div>
+      </div>
     </form>
   );
 }

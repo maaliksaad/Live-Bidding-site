@@ -38,6 +38,14 @@ async function seed() {
       mobileNumber: '1234567891',
       countryCode: '+234',
     },
+    {
+      username: 'seller3',
+      email: 'seller3@example.com',
+      passwordHash: hashedPassword,
+      fullName: 'Alice Trader',
+      mobileNumber: '3456789012',
+      countryCode: '+234',
+    },
   ]);
 
   const now = new Date();
