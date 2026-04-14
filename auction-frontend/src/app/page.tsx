@@ -14,7 +14,10 @@ export default function HomePage() {
   const { data: cars, isLoading, error } = useCars(searchFilters);
   const { currentBids, joinAuction, initializeBidData, timeUpdates } = useSocketContext();
 
-  const displayCars = Array.isArray(cars) ? cars.slice(0, 4).map((car: Car) => {
+  const displayCars = Array.isArray(cars) ? [...cars]
+    .sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime())
+    .slice(0, 4)
+    .map((car: Car) => {
     const auctionId = car._id;
     const realTimeBid = currentBids[auctionId];
     const realTimeRemaining = timeUpdates[auctionId];

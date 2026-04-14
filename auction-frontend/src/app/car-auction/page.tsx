@@ -30,7 +30,7 @@ export default function CarAuctionPage() {
   const { data: filterOptions } = useFilterOptions();
   const [currentPage, setCurrentPage] = useState(1);
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [sortBy, setSortBy] = useState('relevance');
+  const [sortBy, setSortBy] = useState('newest');
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [filters, setFilters] = useState({
     carType: "",
