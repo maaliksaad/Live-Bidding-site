@@ -169,16 +169,16 @@ export function LoginForm() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
           {[
-            { id: 1, email: 'seller1@example.com', label: 'John Seller' },
-            { id: 2, email: 'seller2@example.com', label: 'Jane Dealer' },
-            { id: 3, email: 'seller3@example.com', label: 'Alice Trader' }
+            { id: 1, email: 'seller1@example.com', label: 'John Seller', password: 'password123' },
+            { id: 2, email: 'seller2@example.com', label: 'Jane Dealer', password: 'password123' },
+            { id: 3, email: 'seller4@example.com', label: 'Alice Trader', password: 'Password123' }
           ].map((seller) => (
             <button
               key={seller.id}
               type="button"
               onClick={() => {
                 setValue('identifier', seller.email, { shouldValidate: true });
-                setValue('password', 'password123', { shouldValidate: true });
+                setValue('password', seller.password, { shouldValidate: true });
               }}
               className="flex items-center justify-between p-3.5 bg-gray-50/50 hover:bg-indigo-50 border border-gray-100 hover:border-indigo-200 rounded-xl transition-all group"
             >
